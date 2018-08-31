@@ -1,0 +1,13 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: microservice-eureka-server
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8020/eureka/

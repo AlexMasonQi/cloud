@@ -1,0 +1,14 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-simple-consumer-movie
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+info:
+  app:
+    name: microservice-simple-consumer-movie
+    encoding: UTF-8
+    java:
+      source: 10.0.1
+      target: 10.0.1

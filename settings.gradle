@@ -1,0 +1,5 @@
+rootProject.name = 'cloud'
+include 'microservice-provider-user'
+include 'microservice-simple-consumer-movie'
+include 'microservice-eureka-server'
+
