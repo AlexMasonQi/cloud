@@ -2,7 +2,7 @@
 logging:
   config: classpath:logback.xml
 server:
-  port: 80
+  port: 81
   servlet:
     session:
       timeout: 1800s
@@ -13,7 +13,7 @@ server:
     max-http-header-size: 8192
 spring:
   application:
-    name: microservice-provider-user
+    name: microservice-provider-user-metadata
   thymeleaf:
     cache: false
     check-template-location: true
@@ -51,3 +51,6 @@ eureka:
       defaultZone: http://alex:aabbcc@localhost:8021/eureka/
   instance:
     prefer-ip-address: true
+    metadata-map:
+      app-port: 81
+      app-IP: localhost

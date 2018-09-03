@@ -2,4 +2,8 @@ rootProject.name = 'cloud'
 include 'microservice-provider-user'
 include 'microservice-simple-consumer-movie'
 include 'microservice-eureka-server'
+include 'microservice-eureka-server-ha'
+include 'microservice-discovery-eureka-authenticating'
+include 'microservice-provider-user-metadata'
+include 'microservice-consumer-movie-unstanding-metadata'
 

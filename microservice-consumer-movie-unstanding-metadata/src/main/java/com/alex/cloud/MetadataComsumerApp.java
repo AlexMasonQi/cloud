@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class SimpleConsumerApp
+public class MetadataComsumerApp
 {
     @Autowired
     private RestTemplateBuilder restTemplateBuilder;
@@ -21,6 +21,6 @@ public class SimpleConsumerApp
 
     public static void main(String[] args)
     {
-        SpringApplication.run(SimpleConsumerApp.class, args);
+        SpringApplication.run(MetadataComsumerApp.class, args);
     }
 }
