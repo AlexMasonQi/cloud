@@ -6,4 +6,6 @@ include 'microservice-eureka-server-ha'
 include 'microservice-discovery-eureka-authenticating'
 include 'microservice-provider-user-metadata'
 include 'microservice-consumer-movie-unstanding-metadata'
+include 'microservice-consumer-movie-ribbon'
+include 'microservice-consumer-movie-ribbon-customizing'
 
