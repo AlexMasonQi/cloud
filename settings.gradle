@@ -8,4 +8,6 @@ include 'microservice-provider-user-metadata'
 include 'microservice-consumer-movie-unstanding-metadata'
 include 'microservice-consumer-movie-ribbon'
 include 'microservice-consumer-movie-ribbon-customizing'
+include 'microservice-consumer-movie-feign'
+include 'microservice-consumer-movie-feign-customizing'
 
