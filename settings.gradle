@@ -10,4 +10,6 @@ include 'microservice-consumer-movie-ribbon'
 include 'microservice-consumer-movie-ribbon-customizing'
 include 'microservice-consumer-movie-feign'
 include 'microservice-consumer-movie-feign-customizing'
+include 'microservice-consumer-movie-ribbon-hystrix'
+include 'microservice-consumer-movie-feign-hystrix'
 

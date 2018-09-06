@@ -1,6 +1,8 @@
 package com.alex.cloud.api;
 
 import com.alex.cloud.entity.AudioLibrary;
+import com.alex.cloud.util.DateTimeUtil;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ public class ServiceApi
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
+    @HystrixCommand(fallbackMethod = "findByIdFallBack")
     @GetMapping("/audio/{id}")
     public AudioLibrary findAudioById(@PathVariable Integer id)
     {
@@ -35,5 +37,18 @@ public class ServiceApi
         ServiceInstance serviceInstance = loadBalancerClient.choose("microservice-provider-user");
         //打印当前选择的是哪个节点
         logger.info("{}:{}:{}", serviceInstance.getServiceId(), serviceInstance.getHost(), serviceInstance.getPort());
+    }
+
+    public AudioLibrary findByIdFallBack(Integer id, Throwable throwable)
+    {
+        AudioLibrary audioLibrary = new AudioLibrary();
+        audioLibrary.setId(-1);
+        audioLibrary.setAudioName("error message response");
+        audioLibrary.setAudioTime("0");
+        audioLibrary.setCreateUser("Alex");
+        audioLibrary.setCreateTime(DateTimeUtil.getCurrentDateTime());
+        logger.error("Cannot connect port \"80\"", throwable);
+
+        return audioLibrary;
     }
 }

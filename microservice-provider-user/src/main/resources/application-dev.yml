@@ -2,7 +2,7 @@
 logging:
   config: classpath:logback.xml
 server:
-  port: 81
+  port: 80
   servlet:
     session:
       timeout: 1800s
