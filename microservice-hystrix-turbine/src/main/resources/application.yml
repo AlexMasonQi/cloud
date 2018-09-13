@@ -1,10 +1,15 @@
 server:
-  port: 8016
+  port: 8019
 spring:
   application:
-    name: microservice-consumer-movie-ribbon-hystrix
+    name: microservice-hystrix-turbine
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  rabbitmq:
+    host: 47.92.157.135
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
@@ -13,8 +18,3 @@ eureka:
     prefer-ip-address: true
 logging:
   config: classpath:logback.xml
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream

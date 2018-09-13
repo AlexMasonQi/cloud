@@ -2,9 +2,14 @@ server:
   port: 8016
 spring:
   application:
-    name: microservice-consumer-movie-ribbon-hystrix
+    name: microservice-consumer-movie-ribbon-hystrix-mq
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  rabbitmq:
+    host: 47.92.157.135
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:

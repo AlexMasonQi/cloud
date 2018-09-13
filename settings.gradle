@@ -12,4 +12,7 @@ include 'microservice-consumer-movie-feign'
 include 'microservice-consumer-movie-feign-customizing'
 include 'microservice-consumer-movie-ribbon-hystrix'
 include 'microservice-consumer-movie-feign-hystrix'
+include 'microservice-hystrix-dashboard'
+include 'microservice-hystrix-turbine'
+include 'microservice-consumer-movie-ribbon-hystrix-mq'
 
