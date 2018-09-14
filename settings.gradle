@@ -15,4 +15,7 @@ include 'microservice-consumer-movie-feign-hystrix'
 include 'microservice-hystrix-dashboard'
 include 'microservice-hystrix-turbine'
 include 'microservice-consumer-movie-ribbon-hystrix-mq'
+include 'microservice-gateway-zuul'
+include 'microservice-sidecar'
+include 'microservice-gateway-zuul-aggregation'
 

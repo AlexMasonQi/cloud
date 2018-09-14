@@ -1,0 +1,31 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://alex:aabbcc@localhost:8021/eureka/
+  instance:
+    prefer-ip-address: true
+logging:
+  config: classpath:logback.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+zuul:
+  routes:
+    user-route:
+      path: /user/**
+      service-id: microservice-provider-user
+  ignored-services: microservice-provider-user
+  sensitive-headers: Cookie,Set-Cookie,Authorization
+  thread-pool:
+    use-separate-thread-pools: true
+  ribbon-isolation-strategy: thread
+microservice-provider-user:
+  ribbon:
+    listOfServers: localhost,localhost:81
