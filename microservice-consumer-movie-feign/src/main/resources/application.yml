@@ -5,6 +5,13 @@ spring:
     name: microservice-consumer-movie-feign
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  sleuth:
+    enabled: true
+    log:
+      slf4j:
+        enabled: true
+    feign:
+      enabled: true
 eureka:
   client:
     service-url:
@@ -12,4 +19,6 @@ eureka:
   instance:
     prefer-ip-address: true
 logging:
-  config: classpath:logback.xml
+  level:
+    root: INFO
+    org.springframework.cloud.sleuth: DEBUG

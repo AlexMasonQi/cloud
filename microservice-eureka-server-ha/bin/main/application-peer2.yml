@@ -1,0 +1,8 @@
+server:
+  port: 8031
+eureka:
+  instance:
+    hostname: peer2
+spring:
+  profiles:
+    active: peer2

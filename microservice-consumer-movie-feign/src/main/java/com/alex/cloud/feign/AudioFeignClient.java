@@ -6,9 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
+
 @FeignClient(name = "microservice-provider-user")
 public interface AudioFeignClient
 {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public AudioLibrary findAudioById(@PathVariable("id") Integer id);
+    AudioLibrary findAudioById(@PathVariable("id") Integer id);
+
+    @RequestMapping(value = "/allAudio", method = RequestMethod.GET)
+    List<AudioLibrary> findAllAudio();
 }

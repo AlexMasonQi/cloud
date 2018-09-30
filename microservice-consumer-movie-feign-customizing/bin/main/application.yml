@@ -1,0 +1,25 @@
+server:
+  port: 8015
+spring:
+  application:
+    name: microservice-consumer-movie-feign-customize
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://alex:aabbcc@localhost:8021/eureka/
+  instance:
+    prefer-ip-address: true
+logging:
+  config: classpath:logback.xml
+
+#feign自定义配置
+#feign:
+#  client:
+#    config:
+#      feignName:
+#        connectTimeout: 5000
+#        readTimeout: 5000
+#        loggerLevel: full
+#        decode404: false

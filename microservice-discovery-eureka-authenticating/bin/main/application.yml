@@ -1,0 +1,17 @@
+server:
+  port: 8021
+spring:
+  application:
+    name: microservice-discovery-eureka-authenticating
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://alex:aabbcc@localhost:8021/eureka/
+logging:
+  config: classpath:logback.xml

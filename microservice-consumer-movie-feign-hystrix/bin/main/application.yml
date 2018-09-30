@@ -1,0 +1,19 @@
+server:
+  port: 8017
+spring:
+  application:
+    name: microservice-consumer-movie-feign-hystrix
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://alex:aabbcc@localhost:8021/eureka/
+  instance:
+    prefer-ip-address: true
+logging:
+  config: classpath:logback.xml
+#feign开启hystrix容错支持
+feign:
+  hystrix:
+    enabled: true

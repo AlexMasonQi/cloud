@@ -18,4 +18,5 @@ include 'microservice-consumer-movie-ribbon-hystrix-mq'
 include 'microservice-gateway-zuul'
 include 'microservice-sidecar'
 include 'microservice-gateway-zuul-aggregation'
+include 'microservice-provider-user-trace'
 

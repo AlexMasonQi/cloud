@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: microservice-eureka-server-ha
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer2:8031/eureka/,http://peer1:8030/eureka/

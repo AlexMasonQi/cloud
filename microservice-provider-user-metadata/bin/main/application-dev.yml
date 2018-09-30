@@ -1,0 +1,56 @@
+## 项目基本配置
+logging:
+  config: classpath:logback.xml
+server:
+  port: 81
+  servlet:
+    session:
+      timeout: 1800s
+  tomcat:
+    uri-encoding: utf-8
+    max-connections: 10000
+    max-threads: 3000
+    max-http-header-size: 8192
+spring:
+  application:
+    name: microservice-provider-user-metadata
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    enabled: true
+    mode: LEGACYHTML5
+    prefix: classpath:/templates/
+    suffix: .html
+  servlet:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 100Mb
+  datasource:
+    url: jdbc:mysql://47.92.81.14:3306/offcn_audio?useUnicode=true&characterEncoding=UTF-8&useSSL=true&allowMultiQueries=true&autoReconnect=true&tinyInt1isBit=false
+    username: root
+    password: Offcn#wxsyb!(1sTudEnt
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    tomcat:
+      initial-size: 3
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      max-idle: 5
+      max-wait: 60000
+    type: com.alibaba.druid.pool.DruidDataSource
+#mybatis配置信息
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://alex:aabbcc@localhost:8021/eureka/
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      app-port: 81
+      app-IP: localhost

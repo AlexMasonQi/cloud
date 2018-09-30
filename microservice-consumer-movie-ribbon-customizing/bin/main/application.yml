@@ -1,0 +1,22 @@
+server:
+  port: 8013
+spring:
+  application:
+    name: microservice-consumer-movie-ribbon-customizing
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://alex:aabbcc@localhost:8021/eureka/
+  instance:
+    prefer-ip-address: true
+logging:
+  config: classpath:logback.xml
+
+#自定义Ribbon配置(属性方法配置)
+ribbon:
+  NFLoaqdBalancerRuleClassName: com.netflix.loadbalancer.RandonRule
+  eager-load:
+    enabled: true
+    clients: microservice-provider-user

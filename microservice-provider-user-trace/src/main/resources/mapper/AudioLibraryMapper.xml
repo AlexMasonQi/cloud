@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.alex.cloud.dao.AudioLibraryDao">
+    <resultMap id="audioMap" type="com.alex.cloud.entity.AudioLibrary">
+        <id column="id" property="id"/>
+        <result column="audio_name" property="audioName"/>
+        <result column="audio_path" property="audioPath"/>
+        <result column="audio_time" property="audioTime"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="BaseColumnList">
+        id,audio_name,audio_path,audio_time,create_user,create_time
+    </sql>
+
+    <!--添加音频-->
+    <insert id="addAudio">
+        insert into audio_library(audio_name,audio_path,audio_time,create_user,create_time) values(#{audioName},#{audioPath},#{audioTime},#{createUser},#{createTime})
+    </insert>
+
+    <!--查询所有音频-->
+    <select id="selectAllAudio" resultMap="audioMap">
+        select
+        <include refid="BaseColumnList"/>
+        from audio_library
+        order by id desc
+    </select>
+
+    <!--根据ID查询音频-->
+    <select id="selectAudioById" resultMap="audioMap">
+        select
+        <include refid="BaseColumnList"/>
+        from audio_library
+        where id=#{id}
+    </select>
+
+    <update id="updateAudio">
+        update audio_library
+        <set>
+            <if test="audioName!=null">
+                audio_name=#{audioName}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteAudioById">
+        delete from audio_library where id=#{id}
+    </delete>
+</mapper>

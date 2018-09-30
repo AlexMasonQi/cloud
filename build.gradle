@@ -18,7 +18,7 @@ allprojects {
     apply plugin: 'org.springframework.boot'
     group = 'com.alex'
     version = '1.0.0'
-    sourceCompatibility = 10
+    sourceCompatibility = 11
     repositories {
         mavenLocal()
         mavenCentral()
